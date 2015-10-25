@@ -322,6 +322,15 @@ COMPLIANT TO JEDEC STANDARDS MO-187BA</description>
 <rectangle x1="-0.6256" y1="1.5" x2="-0.3756" y2="2.5" layer="51" rot="R180"/>
 <rectangle x1="-1.1256" y1="1.5" x2="-0.8756" y2="2.5" layer="51" rot="R180"/>
 </package>
+<package name="JOHANSON868">
+<wire x1="6.985" y1="2.032" x2="0" y2="2.032" width="0.127" layer="21"/>
+<wire x1="0" y1="2.032" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="6.985" y2="0" width="0.127" layer="21"/>
+<wire x1="6.985" y1="0" x2="6.985" y2="2.032" width="0.127" layer="21"/>
+<smd name="1" x="0" y="1.016" dx="1.9304" dy="0.9652" layer="1" rot="R90"/>
+<smd name="2" x="6.985" y="1.016" dx="1.9304" dy="0.9652" layer="1" rot="R90"/>
+<text x="1.905" y="0.381" size="1.27" layer="21">ANT</text>
+</package>
 </packages>
 <symbols>
 <symbol name="PIC32MX370F512H">
@@ -470,6 +479,14 @@ COMPLIANT TO JEDEC STANDARDS MO-187BA</description>
 <pin name="THERM" x="12.7" y="5.08" length="short" direction="in" rot="R180"/>
 <pin name="VBAT" x="12.7" y="10.16" length="short" direction="pwr" rot="R180"/>
 <pin name="VSS" x="-12.7" y="-7.62" length="short" direction="pwr"/>
+</symbol>
+<symbol name="JOANSON868">
+<wire x1="-10.16" y1="-2.54" x2="10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-2.54" x2="10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="2.54" x2="-10.16" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="2.54" x2="-10.16" y2="-2.54" width="0.254" layer="94"/>
+<pin name="1" x="-15.24" y="0" length="middle"/>
+<pin name="2" x="15.24" y="0" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -644,6 +661,22 @@ COMPLIANT TO JEDEC STANDARDS MO-187BA</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="JOHANSON868" prefix="ANT">
+<gates>
+<gate name="G$1" symbol="JOANSON868" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="JOHANSON868">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="RFM23BP">
@@ -749,6 +782,7 @@ Library by: &lt;a href="http://projects.weber-itam.de"&gt;http://projects.weber-
 <part name="BT1" library="mylib1" deviceset="RN42" device=""/>
 <part name="PWR1" library="mylib1" deviceset="LT1767E-3.3" device=""/>
 <part name="CHGR1" library="mylib1" deviceset="MCP73837-FCI/UN" device=""/>
+<part name="ANT1" library="mylib1" deviceset="JOHANSON868" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -760,6 +794,7 @@ Library by: &lt;a href="http://projects.weber-itam.de"&gt;http://projects.weber-
 <instance part="BT1" gate="G$2" x="63.5" y="114.3"/>
 <instance part="PWR1" gate="G$1" x="-139.7" y="-12.7"/>
 <instance part="CHGR1" gate="G$1" x="-127" y="50.8"/>
+<instance part="ANT1" gate="G$1" x="-139.7" y="114.3"/>
 </instances>
 <busses>
 </busses>
